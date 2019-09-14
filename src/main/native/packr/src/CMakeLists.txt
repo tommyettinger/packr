@@ -6,7 +6,7 @@ endif()
 
 fips_setup_jni()
 
-fips_files(packr.cpp packr.h)
+fips_files(packr.cpp packr.h packr.rc resource.h)
 
 if (FIPS_WINDOWS)
     fips_dir(win32)
