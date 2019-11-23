@@ -40,11 +40,7 @@ int main(int argc, char** argv) {
 
 bool loadJNIFunctions(GetDefaultJavaVMInitArgs* getDefaultJavaVMInitArgs, CreateJavaVM* createJavaVM) {
 
-#if defined(__LP64__)
-    void* handle = dlopen("jre/lib/amd64/server/libjvm.so", RTLD_LAZY);
-#else
-    void* handle = dlopen("jre/lib/i386/server/libjvm.so", RTLD_LAZY);
-#endif
+    void* handle = dlopen("jre/lib/server/libjvm.so", RTLD_LAZY);
     if (handle == NULL) {
         cerr << dlerror() << endl;
         return false;
